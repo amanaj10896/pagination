@@ -1,0 +1,33 @@
+type Query {
+	getBooks: [Book]
+	getAllBooksPaginated(id: String, skip: Int,first: Int):[Book]
+	getBookByTitle(title: String,  skip: Int,first: Int):[Book]
+	getBookByPublisherSorted(publisher: String, skip: Int,first: Int, sort: String, keytosort: String):[Book]
+	getBookByPublisherAndAuthor(data: Data):[Book]
+	getBookByPublisherAndAuthorSorted(data: Data, skip: Int,first: Int, sort: String, keytosort: String):[Book]
+	}
+	
+type Mutation {
+	createBook(id: String
+	title: String
+	publisher: String
+	authors: String
+	publishedDate: String): Book!
+}
+
+type Book {
+ 	id: String
+ 	title: String
+ 	publisher: String
+ 	authors: String
+ 	publishedDate: String
+}
+
+enum sort{
+	ASC
+	DESC
+}
+ input Data{
+ 	publisher: String
+ 	authors: String
+ }
